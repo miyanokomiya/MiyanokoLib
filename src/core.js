@@ -8,7 +8,7 @@ define(function(require) {
         canvasUtil : require("./canvasUtil"),
         mathUtil : require("./mathUtil"),
         Sound : require("./Sound"),
-        SvgUtil : require("./SvgUtil"),
+        svgUtil : require("./svgUtil"),
     };
 
     return core;

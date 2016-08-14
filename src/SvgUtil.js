@@ -2,7 +2,7 @@ define(function(require) {
 	var mathUtil = require("./mathUtil");
 	/**
 	 * SVG関連処理
-	 * @class SvgUtil
+	 * @class svgUtil
 	 * @namespace MiyanokoLib
 	 * @static
 	 */
