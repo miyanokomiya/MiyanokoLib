@@ -1,0 +1,11 @@
+{
+    "name": "MiyanokoLib YuiDoc",
+    "description": "",
+    "version": "1.0.0",
+    "url": "https://github.com/miyanokomiya/MiyanokoLib",
+    "options": {
+        "outdir": "./docs",
+        "paths":["./src/"],
+        "exclude":"lib"
+    }
+}
