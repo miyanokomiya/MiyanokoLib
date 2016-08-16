@@ -4,13 +4,16 @@ define(function(require) {
 
     var ctx1 = $("#canvas")[0].getContext("2d");
 
-    var draw = function(pointList) {
+    var draw = function(pointList, close) {
         ctx1.strokeStyle = "red";
         ctx1.setLineDash([3,3]);
         ctx1.beginPath();
         pointList.forEach(function(p) {
             ctx1.lineTo(p.x, p.y);
         });
+        if (close) {
+            ctx1.closePath();
+        }
         ctx1.stroke();
     };
 
@@ -31,14 +34,6 @@ define(function(require) {
         doTest();
     });
 
-    var req = new XMLHttpRequest();
-    req.open("get", "./test.svg", true);
-    req.onload = function() {
-        svgStr = req.responseText;
-        doTest();
-    };
-    req.send(null);
-
     var doTest = function() {
         ctx1.clearRect(0, 0, 500, 500);
         splitSize = parseInt($("#split-size").val(), 10);
@@ -50,7 +45,7 @@ define(function(require) {
 
 		for (var i = 0; i < svgInfoList.length; i++) {
 			var info = svgInfoList[i];
-            draw(info.pointList);
+            draw(info.pointList, info.close);
 		}
 
         $("#svg-box").empty();
