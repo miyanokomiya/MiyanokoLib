@@ -1096,7 +1096,7 @@ define(function(){
 			// 近似単位
 			var unitT = range / size;
 
-			for (i = 0; i < size; i++) {
+			for (i = 0; i <= size; i++) {
 				t = unitT * i + startRadian - radian;
 				p = {
 					x : rx * Math.cos(t),
@@ -1184,7 +1184,7 @@ define(function(){
 				rx, ry,
 				startRadian,
 				endRadian,
-				centers[0],
+				center,
 				radian, size);
 
 			return pList;
